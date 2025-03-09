@@ -1,10 +1,10 @@
-/* Import Google Fonts for better typography */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap');
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; /* Modern, clean stack */
-    background-color: #eef2f7; /* Light, neutral background */
-    color: #1e293b; /* Dark slate for text */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background-color: #eef2f7;
+    color: #1e293b;
     margin: 0;
     padding: 1rem;
     min-height: 100vh;
@@ -17,26 +17,29 @@ body {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.1), /* Softer shadow with slate tint */
-                0 2px 4px rgba(30, 41, 59, 0.05);
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.1), 0 2px 4px rgba(30, 41, 59, 0.05);
     text-align: center;
-    max-width: 400px;
+    max-width: 500px; /* Aumentado para tu fórmula más larga */
     width: 100%;
-    transition: all 0.3s ease; /* Smooth transition for hover */
-    position: relative; /* For icon positioning */
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .formula-container:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(30, 41, 59, 0.15); /* Enhanced hover shadow */
+    box-shadow: 0 6px 16px rgba(30, 41, 59, 0.15);
+}
+
+.formula-container p {
+    margin: 0.75em 0; /* Espaciado uniforme entre párrafos */
+    font-size: 1.1em;
 }
 
 .equation {
-    font-family: 'Source Code Pro', monospace; /* Monospace for equations */
-    font-size: 1.5em;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.6em; /* Ligeramente más grande para la fórmula principal */
     font-weight: 600;
-    margin: 1em 0;
-    color: #0f172a; /* Deep slate for emphasis */
+    color: #0f172a;
 }
 
 .fraction {
@@ -45,8 +48,8 @@ body {
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    min-width: 1.5em;
-    color: #2563eb; /* Vibrant blue for fractions */
+    min-width: 6em; /* Aumentado para la longitud de tu numerador */
+    color: #2563eb;
 }
 
 .numerator, .denominator {
@@ -55,40 +58,28 @@ body {
 }
 
 .numerator {
-    border-bottom: 2px solid #2563eb; /* Matching blue for fraction line */
+    border-bottom: 2px solid #2563eb;
 }
 
 .denominator {
     padding-top: 0.25em;
 }
 
-/* Icon Styling (Assuming Font Awesome or similar) */
+/* Ícono */
 .formula-icon {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    font-size: 1.25em;
-    color: #64748b; /* Slate gray for icons */
+    font-size: 1.5em;
+    color: #64748b;
     transition: color 0.3s ease;
 }
 
 .formula-container:hover .formula-icon {
-    color: #2563eb; /* Blue on hover */
+    color: #2563eb;
 }
 
-/* Example with a pseudo-element icon (if no external library) */
-.formula-container::before {
-    content: '\2211'; /* Unicode for summation (∑), replace as needed */
-    font-family: 'Source Code Pro', monospace;
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    font-size: 1.5em;
-    color: #10b981; /* Emerald green for contrast */
-    opacity: 0.8;
-}
-
-/* Responsiveness */
+/* Responsividad */
 @media (max-width: 480px) {
     .formula-container {
         padding: 1.5rem;
@@ -100,33 +91,16 @@ body {
     }
 
     .fraction {
-        min-width: 1.2em;
+        min-width: 4em;
     }
 
     .formula-icon {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
 
-/* Accessibility */
+/* Accesibilidad */
 :focus {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-    body {
-        background-color: #ffffff;
-        color: #000000;
-    }
-    .formula-container {
-        box-shadow: 0 0 0 2px #000000;
-    }
-    .numerator {
-        border-bottom: 2px solid #000000;
-    }
-    .fraction {
-        color: #000000;
-    }
 }
